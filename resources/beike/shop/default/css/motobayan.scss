@@ -1,0 +1,335 @@
+@charset "UTF-8";
+
+/*
+ * MotoBayan PH storefront layer.
+ * Kept separate from the upstream theme so future BeikeShop updates are easier
+ * to compare and merge.
+ */
+:root {
+  --mb-navy: #102036;
+  --mb-navy-soft: #1a304d;
+  --mb-red: #c9303e;
+  --mb-yellow: #f5c84b;
+  --mb-ink: #18202a;
+  --mb-muted: #66717e;
+  --mb-paper: #f6f4ee;
+  --mb-line: #e6e1d7;
+  --mb-white: #ffffff;
+  --bs-primary: var(--mb-red);
+  --bs-primary-rgb: 201, 48, 62;
+}
+
+body {
+  color: var(--mb-ink);
+  background: #fff;
+  font-family: 'Jost', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body.page-home {
+  background: linear-gradient(180deg, #fff 0, #fff 36%, var(--mb-paper) 100%);
+}
+
+::selection {
+  background: var(--mb-yellow);
+  color: var(--mb-navy);
+}
+
+a {
+  transition: color .18s ease, opacity .18s ease;
+}
+
+.btn-primary,
+.bg-primary {
+  background-color: var(--mb-red) !important;
+  border-color: var(--mb-red) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #a92330 !important;
+  border-color: #a92330 !important;
+}
+
+.btn {
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+.module-title {
+  color: var(--mb-navy);
+  letter-spacing: -.02em;
+}
+
+header {
+  border-bottom: 1px solid rgba(16, 32, 54, .08);
+
+  .top-wrap {
+    min-height: 38px;
+    height: auto;
+    background: var(--mb-navy);
+    color: rgba(255,255,255,.88);
+    font-size: 12px;
+    letter-spacing: .02em;
+
+    .btn,
+    a,
+    .my-auto {
+      color: rgba(255,255,255,.9);
+      font-size: 12px;
+    }
+
+    .dropdown:hover {
+      background: var(--mb-navy-soft);
+    }
+
+    .dropdown-menu a {
+      color: var(--mb-ink);
+    }
+
+    .motobayan-top-note {
+      color: var(--mb-yellow);
+      font-weight: 600;
+      margin-left: .65rem;
+    }
+  }
+
+  .header-content {
+    padding: .75rem 0;
+    box-shadow: 0 8px 32px rgba(16, 32, 54, .05);
+
+    .logo img {
+      max-width: 190px;
+      max-height: 56px;
+    }
+
+    .menu-wrap > .navbar-nav > .nav-item > .nav-link {
+      color: var(--mb-navy);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .035em;
+      font-size: 13px;
+    }
+
+    .menu-wrap > .navbar-nav > .nav-item:hover > .nav-link {
+      color: var(--mb-red);
+    }
+
+    .right-btn .nav-link img {
+      filter: brightness(.35) saturate(1.15);
+    }
+  }
+
+  .cart-badge-quantity {
+    background: var(--mb-red);
+  }
+
+  .header-mobile {
+    background: #fff;
+
+    .mobile-open-menu,
+    .mobile-open-search {
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+.breadcrumb-wrap {
+  background: var(--mb-paper);
+  border-bottom: 1px solid var(--mb-line);
+}
+
+.modules-box {
+  .module-item {
+    @media (min-width: 768px) {
+      padding-top: 38px;
+      padding-bottom: 38px;
+    }
+  }
+}
+
+.module-img-text-slideshow-2 {
+  &.w-container-fluid,
+  &.w-container {
+    border-radius: 0;
+  }
+
+  .image-text-wrap {
+    background: linear-gradient(90deg, rgba(5, 13, 25, .68) 0%, rgba(5, 13, 25, .24) 54%, rgba(5, 13, 25, .03) 100%);
+  }
+
+  .text-wrap {
+    max-width: 660px;
+
+    .sub-title {
+      color: var(--mb-yellow);
+      font-size: .85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .title {
+      font-weight: 700;
+      letter-spacing: -.035em;
+      line-height: 1.02;
+
+      @media (min-width: 992px) {
+        font-size: clamp(3.3rem, 5vw, 5.3rem);
+      }
+    }
+
+    .description {
+      max-width: 570px;
+      color: rgba(255,255,255,.88);
+    }
+
+    a.btn {
+      border-radius: .45rem;
+      background: var(--mb-yellow);
+      color: var(--mb-navy);
+      border: 1px solid var(--mb-yellow);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+
+      &:hover {
+        background: #fff;
+        border-color: #fff;
+        color: var(--mb-navy);
+      }
+    }
+  }
+}
+
+.module-swiper-img-scroll-text-2 {
+  background: var(--mb-yellow);
+  color: var(--mb-navy);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  border: 0 !important;
+
+  .scroll-info .scroll-text::after {
+    background: var(--mb-yellow);
+  }
+}
+
+.module-icons {
+  .image-item {
+    border-radius: .75rem;
+    background: #fff;
+    border: 1px solid var(--mb-line);
+    box-shadow: 0 8px 24px rgba(16,32,54,.06);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  a:hover .image-item,
+  .item:hover .image-item {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(16,32,54,.12);
+  }
+
+  .title {
+    color: var(--mb-navy);
+  }
+}
+
+.module-tab-product {
+  .nav .nav-link {
+    color: var(--mb-muted);
+    border-color: transparent;
+
+    &.active {
+      color: var(--mb-navy);
+      border-color: var(--mb-red);
+    }
+  }
+}
+
+.product-wrap {
+  height: 100%;
+  padding: 10px 10px 14px;
+  border: 1px solid transparent;
+  border-radius: .8rem;
+
+  .image {
+    background: var(--mb-paper);
+    border-radius: .6rem;
+  }
+
+  .product-name {
+    color: var(--mb-navy);
+    font-size: 15px;
+  }
+
+  .product-price .price-new {
+    color: var(--mb-red);
+  }
+
+  .image .button-wrap button {
+    background: var(--mb-navy);
+    border-right-color: rgba(255,255,255,.16);
+  }
+
+  @media (min-width: 768px) {
+    &:hover {
+      border-color: var(--mb-line);
+      box-shadow: 0 16px 36px rgba(16,32,54,.08);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+footer {
+  background: var(--mb-navy);
+  color: rgba(255,255,255,.76);
+
+  .services-wrap {
+    background: var(--mb-yellow);
+    border-bottom: 0;
+
+    .service-item .title,
+    .service-item .sub-title {
+      color: var(--mb-navy);
+    }
+  }
+
+  .footer-content {
+    a,
+    .text,
+    h6 {
+      color: rgba(255,255,255,.86);
+    }
+
+    a:hover {
+      color: var(--mb-yellow);
+    }
+  }
+
+  .footer-bottom {
+    border-top-color: rgba(255,255,255,.12);
+    color: rgba(255,255,255,.58);
+  }
+}
+
+.account-sidebar .list-group-item[type='submit'] {
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: rgba(201,48,62,.6);
+  box-shadow: 0 0 0 .2rem rgba(201,48,62,.1);
+}
+
+@media (max-width: 767.98px) {
+  .module-img-text-slideshow-2 .text-wrap {
+    padding-inline: 18px;
+  }
+
+  footer .footer-content {
+    padding: 14px 0 24px;
+  }
+}
