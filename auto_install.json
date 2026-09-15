@@ -1,0 +1,38 @@
+{
+    "php_version": "8.2",
+    "mysql_version": "8.0",
+    "nginx_version": "1.24",
+    "php_ext": "fileinfo,bcmath,ctype,curl,dom,json,mbstring,openssl,pdo,pdo_mysql,tokenizer,xml",
+    "enable_functions": ["proc_open"],
+    "chmod": [
+        {
+            "mode": 755,
+            "path": "/storage"
+        },
+        {
+            "mode": 755,
+            "path": "/bootstrap/cache"
+        },
+        {
+            "mode": 755,
+            "path": "/public/cache"
+        },
+        {
+            "mode": 755,
+            "path": "/public/plugin"
+        }
+    ],
+    "remove_file": ["/.user.ini"],
+    "run_path": "/public",
+    "rewrite_type": "laravel",
+    "success_url": "/index.php",
+    "admin_email": "admin@{{DOMAIN}}",
+    "admin_password": "{{AUTO}}",
+    "admin_locale": "zh_cn",
+    "app_timezone": "PRC",
+    "app_force_https": false,
+    "trust_hosts_enabled": true,
+    "queue_connection": "database",
+    "cache_driver": "file",
+    "session_driver": "file"
+}
